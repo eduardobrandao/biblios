@@ -1,0 +1,60 @@
+
+<div class="cabecalho">
+	<label><i class="fa fa-exchange" aria-hidden="true"></i> Emprestimos Realizados</label>
+	<!-- <div class="opcao">
+			<a class="but-suc" href="<?= url('/funcionario/novo') ?>"><i class="fa fa-plus" aria-hidden="true"></i>
+					Cadastrar</a>
+	</div> -->
+	<br><br>
+	<hr>
+
+	<div class="barra-pesquisa">
+		<form action="inicio.html">
+			<input class="campo-pesquisa" type="text" placeholder="faça sua busca">
+			<button class="but-pes" type="submit" style="width:90px;">
+				<i class="fa fa-search" aria-hidden="true"></i>
+				Buscar</button>
+		</form>
+	</div>
+</div>
+<!-- <div class="titulo-pg">
+	<label>Lista de Exemplares</label>
+</div> -->
+
+<table>
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Funcionario</th>
+			<th>Cargo</th>
+			<th>Data emprestimo</th>
+			<th>Data Devolução</th>
+			<th>Qdt Livros</th>
+			<th>Ação</th>
+		</tr>
+	</thead>
+	<tbody>
+	<?php
+	if(empty($this->emprestimos)){
+		echo '<tr> <td colspan="7" style="background-color: #ccc;"> Não há emprestimos para serem listados</td> </tr>';
+	} else {
+	foreach ($this->emprestimos as $key => $emprestimo) { ?>
+		<tr style="<?php if($key%2 == 0) echo 'background-color: #dbe4f3;' ?>">
+			<td><?= ++$key ?></td>
+			<td><?= $emprestimo['strnomefuncionario'] ?></td>
+			<td><?= $emprestimo['cargo'] ?></td>
+			<td><?= date('d/m/Y', strtotime($emprestimo['dtaemprestimo'])) ?></td>
+            <td><?= date('d/m/Y', strtotime($emprestimo['dtadevolucao'])) ?></td>
+            <td><?= $emprestimo['livros'] ?></td>
+			<td>
+				<a class="but-suc" href="<?= url('/emprestimo/devolver/'.$emprestimo['idemprestimo']) ?>">
+					<i class="fa fa-undo" aria-hidden="true"></i>
+					Devolução</a>
+				<a class="but-war" href="<?= url('/emprestimo/vizualizar/'.$emprestimo['idemprestimo']) ?>">
+					<i class="fa fa-eye" aria-hidden="true"></i>
+					Vizualizar</a>
+			</td>
+		</tr>
+	<?php } } ?>
+	</tbody>
+</table>

@@ -1,0 +1,25 @@
+
+<div class="cabecalho">
+    <h3>Início</h3>
+</div>
+<div class="quadro">
+    <a href="<?= url('\acervo') ?>" title="Livros">
+        <div class="icone">
+            <i class="fa fa-book" aria-hidden="true"></i>
+            <label><?= $this->livros ?></label>
+        </div>
+    </a>
+    <a href="<?= url('\funcionario') ?>" title="Funcionarios">
+        <div class="icone" style="background-color: rgb(135, 222, 189)">
+            <i class="fa fa-users" aria-hidden="true"></i>
+            <label><?= $this->funcionarios ?></label>
+        </div>
+    </a>
+    <a href="<?= url('\emprestimo') ?>" title="Emprestimos">
+        <div class="icone" style="background-color: burlywood; text-align: center;">
+            <i class="fa fa-exchange" aria-hidden="true"></i>
+            <label style="text-align: center;"><?= $this->emprestimos ?></label>
+        </div>
+    </a>
+</div>
+				

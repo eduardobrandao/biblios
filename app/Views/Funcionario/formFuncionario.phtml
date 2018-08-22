@@ -1,0 +1,33 @@
+
+<div class="cabecalho">
+    <label>
+        <i class="fa fa-user" aria-hidden="true"></i>
+        Funcionario / Cadastro
+    </label>
+</div>
+<div class="titulo-pg">
+    <label style="margin-left:20px;">Faça aqui o cadastro dos funcionarios.</label>
+</div>
+<br>
+<form action="<?= url('/funcionario/novo') ?>" method="POST" class="form">
+    <!-- <span>Titulo do Livro:*</span><br> -->
+    
+    <input value="<?= isset($this->funcionario['strnomefuncionario'])? $this->funcionario['strnomefuncionario'] : ''; ?>" type="text" name="strnomefuncionario" placeholder="Nome Completo" class="titulo">
+    <input value="<?= isset($this->funcionario['strcpf'])? $this->funcionario['strcpf'] : ''; ?>" type="text" name="strcpf" placeholder="CPF" class="preco cpf">
+    <input value="<?= isset($this->funcionario['dtanascimento'])? $this->funcionario['dtanascimento'] : ''; ?>" type="date" name="dtanascimento" placeholder="Nascimento" class="preco">
+    <input value="<?= isset($this->funcionario['strtelefone'])? $this->funcionario['strtelefone'] : ''; ?>" type="text" name="strtelefone" placeholder="Telefone" class="preco">
+    <select class="area"  name="idfuncionariotipo" id="" required>
+        <!-- <option value="">SELECIONE UMA AREA</option> -->
+        <option value="">TIPO DE FUNCIONARIO</option>
+            <?php foreach($this->tipos as $tipo) { ?>
+        <option <?php if(isset($this->funcionario['idfuncionariotipo']) && ($this->funcionario['idfuncionariotipo'] == $tipo['idfuncionariotipo'])) echo 'selected="selected"'; ?> value="<?= $tipo['idfuncionariotipo']; ?>" ><?= $tipo['strnometipo']; ?></option>
+            <?php };?>
+    </select>
+    <input type="text" placeholder="OAB" class="preco" value="<?= isset($this->funcionario['stroab'])? $this->funcionario['stroab'] : ''; ?>" name="stroab">    
+    <input type="hidden" value="<?= isset($this->funcionario['idfuncionario'])? $this->funcionario['idfuncionario'] : ''; ?>" name="id">
+    <!-- <input type="text" name="quantidade" id="" placeholder="Quantidade" class="preco">
+    <input type="text" name="preco" placeholder="Preço" class="preco"> -->
+    <br>
+    <br>
+    <button class="but-suc" style="font-size:16px;width:90px;margin-left:7px;">Salvar</button>
+</form>

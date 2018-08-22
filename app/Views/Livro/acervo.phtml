@@ -1,0 +1,76 @@
+
+	
+	
+<div class="cabecalho">
+	<label><i class="fa fa-book" aria-hidden="true"></i>Acervo</label>
+	<div class="opcao">
+			<?php if(isset($_SESSION['user']) && $_SESSION['perfil'] == 1) {?>	
+			<a class="but-suc" href="<?= url('/acervo/novo'); ?>"><i class="fa fa-plus" aria-hidden="true"></i>
+					Cadastrar</a>
+			<?php } ?>
+	</div>
+	<br><br>
+	<hr>
+
+	<div class="barra-pesquisa" >
+		<form action="<?= url('/acervo')?>" style="width: 900px; margin: 0 auto;">
+			<input class="campo-pesquisa" name="pesquisa" type="text" placeholder="Faça sua busca">
+			<select class="area" name="filtro" style="width:200px;" >
+				<option value="todos">Listar todos</option>
+				<option value="strnomeexemplar">Título</option>
+				<option value="strautor">Autor</option>
+				<option value="streditora">Editora</option>
+			<select>
+			<button class="but-pes" type="submit" style="width:90px;">
+				<i class="fa fa-filter" aria-hidden="true"></i>
+				Filtrar</button>
+		</form>
+	</div>
+</div>
+<!-- <div class="titulo-pg">
+	<label>Lista de Exemplares</label>
+</div> -->
+
+<table>
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Cod</th>
+			<th>Titulo</th>
+			<th>Autor</th>
+			<th>Editora</th>
+			<th>Nº Exemplares</th>
+			<?php if(isset($_SESSION['user']) && $_SESSION['perfil']  == 1) {?>
+				<th>Acão</th>
+			<?php }?>
+		</tr>
+	</thead>
+	<tbody>
+	<?php
+	if(empty($this->livros)){
+		echo '<tr> <td colspan="6" style="background-color: #ccc;"> Nenhum livro foi encontrado.</td> </tr>';
+	} else {
+	foreach ($this->livros as $key => $livro) { ?>
+		<tr style="<?php if($key%2 == 0) echo 'background-color: #dbe4f3;' ?>">
+			<td><?= ++$key ?></td>
+			<td><?= $livro['strisbn'] ?></td>
+			<td><?= $livro['strnomeexemplar'] ?></td>
+			<td><?= $livro['strautor'] ?></td>
+			<td><?= $livro['streditora'] ?></td>
+			<td><?= $livro['quantidade'] ?></td>
+			<?php if(isset($_SESSION['user']) && $_SESSION['perfil'] == 1) {?>
+			<td>
+					<!-- <a href="#" class="but-war"><i class="fa fa-exchange" aria-hidden="true"></i>
+						Emprestar</a> -->
+					<a class="but-info" href="<?= url('/acervo/'.$livro['strisbn'].'/editar') ?>"><i class="fa fa-pencil" aria-hidden="true"></i>
+						Editar</a>
+					<a class="but-dan" href="<?= url('/acervo/'.$livro['strisbn'].'/excluir') ?>"><i class="fa fa-trash" aria-hidden="true"></i>
+						Excluir</a>
+			</td>
+			<?php }?>			
+		</tr>
+	<?php } }?>
+	</tbody>
+</table>
+
+			

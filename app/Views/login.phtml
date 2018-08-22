@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+	<script type="text/javascript" src=<?= assets("js/jquery-3.2.1.slim.min.js") ?> ></script>  
+	<script type="text/javascript" src=<?= assets("js/jquery.maskedinput.min.js") ?> ></script>  
+  <link rel="stylesheet" href="<?= assets('css/login.css') ?>">
+  <title>login</title>
+</head>
+<body>
+  
+  <form class="form-login" action="<?= url('\login') ?>" method="post">
+    <div>
+      <h2>BIBLIOS</h2>
+      <?= $this->escape($this->nome) ?>
+    </div>
+    <div class="login">
+      <div class="login-info">
+        <label>CPF:</label>
+        <input placeholder="Ex: 99999999922" id="cpf"  class="cpf" type="text" name="strcpf" value="">
+      </div>
+      <!-- <div class="login-info">
+        <input placeholder="Senha" type="password" name="senha" value="">
+      </div> -->
+      <button type="submit">entrar</button>
+    </div>
+  </form>
+  <script type="text/javascript" src="<?= assets("js/mascaras.js") ?>"></script>
+</body>
+</html>

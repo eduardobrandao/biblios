@@ -1,0 +1,329 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+display: block;
+position: relative;
+background-color: #ededef;
+font-size: 16px;
+}
+a{
+	text-decoration: none;
+}
+.topo {
+	width: 98%;
+	margin: 10px auto;
+	/* margin-top: 10px; */
+
+	height: 50px;
+	/* box-shadow: 0px 0px 1em #666; */
+	/* border-radius: 5px; */
+	background-color: #fff;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	margin-bottom: 0;
+}
+ .topo .direita {
+	float: right;
+	width: 300px;
+	/* margin-right: 1x; */
+	margin-top: 10px;
+}
+.direita label{
+	float: right;
+	text-align: center;
+	font-size: 20px;
+	font-family: Arial;
+	padding: 0 5px;
+	/* font-weight: bolder; */
+
+}
+.direita a{
+	float: right;
+	padding: 3px 10px ;
+	margin-right: 10px;
+	font-size: 18px;
+	text-decoration: none;
+	color: black;
+	/* font-weight: bolder; */
+
+}
+
+.nav-esquerda .menu {
+	/* margin: 2px; */
+	width: 15%;
+	/* height: 135px; */
+	/* border: 1px solid #b0c4de; */
+	border-radius: 5px;
+	float: right;
+}
+.esquerda{
+	float: left;
+	/* margin-left: px; */
+	height: 20px;
+}
+.nav-esquerda .menu ul{
+	list-style: none;
+	float: right;
+	width: 250px;
+	margin-top: 90px;
+
+}
+.nav-esquerda .menu li{
+	/* margin: 15px 20px; */
+	font-size: 16px;
+	color: #797979;
+	font-weight: bold;
+	height: 20px;
+	padding: 10px 25px;
+	/* border: solid 1px #eee; */
+	width: 70%;
+	float: right;
+	/* background-color: #b0c4de; */
+}
+.nav-esquerda .menu small{
+	/* margin: 15px 20px; */
+	font-size: 16px;
+	color: #a9a9a9;
+	font-weight: bold;
+	height: 20px;
+	padding: 10px 25px;
+	/* border: solid 1px #eee; */
+	width: 70%;
+	float: right;
+	/* background-color: #b0c4de; */
+}
+.nav-esquerda{
+	height: 700px;
+	background-color: #f5f5f5;
+  float: left;
+	width: 15%;
+	border-right: solid 1px #ddd;
+	margin-left: 16px;
+}
+.nav-esquerda .menu li:hover{
+	background-color: #4169e1;
+	color: white;
+	font-weight: bold;
+}
+.conteudo{
+	background-color: #ededef;
+	float: right;
+	width: 83%;
+}
+.conteudo .caixa-dir{
+	margin: 30px 18px;
+	background-color: white;
+	width: 98%;
+	float: right;
+	min-height: 672px;
+}
+
+.esquerda label{
+	color: #4169e1;
+
+}
+.form-cadastro{
+	width: 350px;
+	height: 150px;
+	/*border: 1px solid #b0c4de;*/
+	margin: 7% auto;
+	border-radius: 40px;
+	/*background-color: #b0c4de;*/
+}
+.form-cadastro button{
+	width: 35%;
+	height: 40px;
+	margin: 18px 35%;
+	border-radius: 15px;
+	border: 1px solid black;
+}
+.conteudo .body{
+	font-family: Arial;
+	width: 98%;
+	margin: 20px auto;
+}
+.cabecalho{
+	margin-bottom: 30px;
+	font-size: 22px;
+}
+.body table{
+    width: 100%;
+    float: left;
+	border-collapse: collapse;
+	margin-top: 10px;
+	/*margin: 0 auto;*/
+}
+.body table th{
+    padding: 5px 5px;
+		/*border: solid 1px #eee;*/
+		/*background-color: #f6f1f1;*/
+}
+.body table td{
+    padding: 15px 5px;
+		/*border: solid 1px #eee;*/
+		/*background-color: #f6f1f1;*/
+}
+
+.body table tr{
+    /*padding: 0 4px;*/
+		text-align: center;
+		/*border: solid 1px #eee;*/
+
+}
+.body table strong{
+    font-size: 16px;
+    color: #333;
+}
+.titulo-pg label{
+	float: left;
+	padding: 5px 25px;
+	font-family: arial;
+}
+.but-suc{
+		width: 60px;
+    background: #1C9A77;
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+	padding: 7px 8px;
+	color: white;
+	font-weight: bold;
+}
+.but-info{
+		width: 60px;
+    background: #0d77d1;
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 7px 8px;
+		color: white;
+		font-weight: bold;
+}
+.but-dan{
+		width: 60px;
+    background: #ec0707;
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 7px 8px;
+		color: white;
+		font-weight: bold;
+}
+.but-war{
+	width: 60px;
+	background: #fb920b;
+	border: 0;
+	border-radius: 3px;
+	cursor: pointer;
+	padding: 7px 8px;
+	color: white;
+	font-weight: bold;
+	margin-top: 5px;
+}
+.but-pes{
+	width: 80px;
+	background: #e5ecf6;
+	border: 0;
+	border-radius: 3px;
+	cursor: pointer;
+	padding: 7px 8px;
+	color: rgb(68, 57, 57);
+	font-weight: bold;
+	border: solid 1px #333;
+}
+.opcao{
+	float: right;
+	/* margin-left: 150px; */
+}
+.opcao a{
+	text-decoration: none;
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+}
+.body .icone{
+	float: left;
+	margin-right: 50px;
+	width: 280px;
+	height: 280px;
+	background-color: #a6bad8;
+	border-radius: 150px;
+	font-size: 100px;
+}
+.body .icone i{
+	margin-top: 50px;
+	margin-left:100px;
+	/* margin-right:100px; */
+	color: white;
+}
+.body .icone label{
+	margin: 0 100px;
+	color: white;
+	font-size: 80px;
+}
+.quadro{
+	margin-left: 90px;
+}
+.barra-pesquisa{
+	width: 50%;
+	margin: 10px auto;
+
+}
+.barra-pesquisa .campo-pesquisa{
+	width: 400px;
+	height: 25px;
+	font-size: 16px;
+	border-radius:5px;
+	border: solid 1px #ddd;
+	background: white;
+	padding: 5px 5px;
+
+}
+.body .form{
+	margin: 20px 40px;
+	width: 100%;
+}
+.form .titulo{
+	width: 90%;
+	height: 15px;
+	padding: 5px 5px;
+	font-size: 18px;
+	margin: 10px 5px;
+}
+.form .autor{
+	width: 70%;
+	height: 15px;
+	padding: 5px 5px;
+	font-size: 18px;
+	margin: 10px 5px;
+}
+.form .ano{
+	width: 208px;
+	height: 15px;
+	padding: 5px 5px;
+	font-size: 18px;
+	margin: 10px 5px;
+}
+.area{
+	width: 222px;
+	/* height: 15px; */
+	padding: 5px 5px;
+	font-size: 16px;
+	margin: 10px 5px;
+}
+.form .editora{
+	width: 45%;
+	height: 15px;
+	padding: 5px 5px;
+	font-size: 18px;
+	margin: 10px 5px;
+}
+.form .preco{
+	width: 239px;
+	height: 15px;
+	padding: 5px 5px;
+	font-size: 18px;
+	margin: 10px 5px;
+}

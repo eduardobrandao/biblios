@@ -1,0 +1,53 @@
+
+<div class="cabecalho">
+	<label><i class="fa fa-exchange" aria-hidden="true"></i> Informações do Emprestimo</label>
+	<!-- <div class="opcao">
+			<a class="but-suc" href="<?= url('/funcionario/novo') ?>"><i class="fa fa-plus" aria-hidden="true"></i>
+					Cadastrar</a>
+	</div> -->
+	<br><br>
+	<hr>
+
+	<div class="barra-pesquisa">
+		<!-- <form action="inicio.html">
+			<input class="campo-pesquisa" type="text" placeholder="faça sua busca">
+			<button class="but-pes" type="submit" style="width:90px;">
+				<i class="fa fa-search" aria-hidden="true"></i>
+				Buscar</button>
+		</form> -->
+	</div>
+</div>
+<!-- <div class="titulo-pg">
+	<label>Lista de Exemplares</label>
+</div> -->
+
+<table >
+	<thead>
+		<tr >
+			<th> <td> ID Emprestimo </td><td><?= $this->emprestimo['idemprestimo'] ?></td> </th>
+		</tr>
+		<tr>
+			<th> <td> Funcionario </td><td><?= $this->emprestimo['strnomefuncionario'] ?></td> </th>		
+		</tr>
+		<tr>
+			<th> <td> Cargo </td><td><?= $this->emprestimo['cargo'] ?></td> </th>		
+		</tr>
+		<tr>
+			<th> <td> Data do Emprestimo </td><td><?= date('d/m/Y', strtotime($this->emprestimo['dtaemprestimo'])) ?></td> </th>		
+		</tr>
+		<tr>
+			<th> <td> Data Para Devolução </td><td><?= date('d/m/Y', strtotime($this->emprestimo['dtadevolucao'])) ?></td> </th>		
+		</tr>
+		<tr>
+			<th>
+				<td>Livros</td>
+				<td style="text-align: justify;">
+					<?php foreach ($this->livros as $livro) { ?>
+						<?= '<i class="fa fa-book" aria-hidden="true"></i> '.$livro['strnomeexemplar']; ?> <br>
+					<?php } ?>
+				</td> 
+				
+			</th>
+		</tr>
+	</thead>
+</table>

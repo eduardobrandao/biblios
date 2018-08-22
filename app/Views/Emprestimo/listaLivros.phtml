@@ -1,0 +1,106 @@
+<script type="text/javascript">
+(function(){
+	"use strict";
+
+	var marcados = 0;
+	var verifyCheckeds = function($checks) {
+		if( marcados>=4 ) {
+			loop($checks, function($element) {
+				$element.disabled = $element.checked ? '' : 'disabled';
+			});
+		} else {
+			loop($checks, function($element) {
+				$element.disabled = '';
+			});
+		}
+	};
+	var loop = function($elements, cb) {
+		var max = $elements.length;
+		while(max--) {
+			cb($elements[max]);
+		}
+	}
+	var count = function($element) {
+		return $element.checked ? marcados + 1 : marcados - 1;
+	}
+	window.onload = function(){
+		var $checks = document.querySelectorAll('input[type="checkbox"]');
+		loop($checks, function($element) {
+			$element.onclick = function(){
+				marcados = count(this);
+				verifyCheckeds($checks);
+			}
+			if($element.checked) marcados = marcados + 1;
+		});
+		verifyCheckeds($checks);
+	}
+}());
+</script>
+	
+	
+<div class="cabecalho">
+    <form method="POST" action="<?= url('/emprestimo/novo'); ?>">
+    <label><i class="fa fa-exchange" aria-hidden="true"></i> Livros Disponiveis Para Emprestimo</label>
+	<a href="<?= url('/emprestimo/lista') ?>" style="font-size:16px;width:140px; height: 35px; margin-top: -5px;" class="but-info" type="submit">
+			<!-- <i class="fa fa-plus" aria-hidden="true"></i> -->
+		<i class="fa fa-list" aria-hidden="true"></i> Emprestados	
+	</a>
+	<div style="" class="opcao">
+			<button style="font-size:16px;width:120px; height: 35px; margin-top: -5px;" class="but-war" type="submit">
+            	<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            Emprestar
+            </button>
+	</div>
+	<br><br>
+	<hr>
+
+	<div class="barra-pesquisa">
+		<!-- <form action="inicio.html">
+			<input class="campo-pesquisa" type="text" placeholder="faça sua busca">
+			<button class="but-pes" type="submit" style="width:90px;">
+				<i class="fa fa-search" aria-hidden="true"></i>
+				Buscar</button>
+		</form> -->
+	</div>
+</div>
+<!-- <div class="titulo-pg">
+	<label>Lista de Exemplares</label>
+</div> -->
+
+<table>
+	<thead>
+		<tr>
+			<th>#</th>
+			<th style="width: 10px"></th>
+			<th style="width: 30%">Titulo</th>
+			<th>Autor</th>			
+			<th>Editora</th>
+			<th>Disponivéis</th>
+			<!-- <th>Acão</th> -->
+		</tr>
+	</thead>
+	<tbody>
+	<?php
+	if(empty($this->livros)){
+		echo '<tr> <td colspan="6" style="background-color: #ccc;"> Não Livros Cadastrados</td> </tr>';
+	} else {
+	foreach ($this->livros as $key => $livro) { ?>
+		<tr style="<?php if($key%2 == 0) echo 'background-color: #dbe4f3;' ?>">
+			<td><?= ++$key ?></td>
+			<td><input type="checkbox" name="strisbn[]" value="<?= $livro['strisbn']?>"></td>
+			<td><?= $livro['strnomeexemplar'] ?></td>
+			<td><?= $livro['strautor'] ?></td>
+			<td><?= $livro['streditora'] ?></td>
+			<td><?= $livro['quantidade'] ?></td>
+			<!-- <td>
+					<a href="#" class="but-war"><i class="fa fa-exchange" aria-hidden="true"></i>
+						Emprestar</a>
+					
+			</td> -->
+		</tr>
+	<?php } }?>
+	</tbody>
+</table>
+    </form>
+
+			
